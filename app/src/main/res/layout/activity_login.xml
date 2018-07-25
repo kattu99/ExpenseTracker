@@ -6,39 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="181dp" />
+
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="55dp"
         android:text="Sign In"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
-
-    <TextView
-        android:id="@+id/username"
-        android:layout_width="174dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="134dp"
-        android:text="User Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/password"
-        android:layout_width="174dp"
-        android:layout_height="21dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="45dp"
-        android:text="Password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        tools:layout_editor_absoluteY="279dp" />
 
     <Button
         android:id="@+id/forgotPassword"
@@ -59,4 +44,14 @@
         android:text="Create Account"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="100dp" />
 </android.support.constraint.ConstraintLayout>
