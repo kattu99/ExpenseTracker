@@ -7,7 +7,7 @@
     tools:context=".AddExpenseActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/placeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -17,7 +17,7 @@
         tools:layout_editor_absoluteY="45dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/phoneText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -27,7 +27,7 @@
         tools:layout_editor_absoluteY="127dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/amountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -37,27 +37,34 @@
         tools:layout_editor_absoluteY="200dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/add_button"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="84dp"
         android:layout_marginStart="90dp"
-        android:text="Button"
+        android:text="Add Expense"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="336dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/cancel_button"
         android:layout_width="209dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="43dp"
         android:layout_marginEnd="87dp"
         android:layout_marginStart="88dp"
         android:layout_marginTop="36dp"
-        android:text="Button"
+        android:text="Cancel "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/add_button" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="207dp"
+        android:layout_height="39dp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="270dp" />
 </android.support.constraint.ConstraintLayout>
