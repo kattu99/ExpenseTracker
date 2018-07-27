@@ -7,9 +7,9 @@ public class Expense {
     public String phone_number;
     public double amount;
     public String type;
-    public Date date;
+    public String date;
 
-    public Expense(String location, String phone_number, double amount,String type,Date date) {
+    public Expense(String location, String phone_number, double amount,String type,String date) {
         this.location = location;
         this.phone_number = phone_number;
         this.amount = amount;
