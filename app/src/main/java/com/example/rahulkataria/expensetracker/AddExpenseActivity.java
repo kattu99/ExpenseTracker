@@ -21,23 +21,29 @@ import java.util.Locale;
 
 public class AddExpenseActivity extends AppCompatActivity {
 
-    Spinner spinner = (Spinner) findViewById(R.id.spinner);
-    EditText place = (EditText) findViewById(R.id.placeText);
-    EditText amount = (EditText) findViewById(R.id.amountText);
-    EditText phoneNumber = (EditText) findViewById(R.id.phoneText);
-    EditText dateText = (EditText) findViewById(R.id.dateText);
-    Button addExpense = (Button) findViewById(R.id.add_button);
-    Calendar myCalendar = Calendar.getInstance();
+
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    private Calendar myCalendar = Calendar.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
 
+        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        final EditText place = (EditText) findViewById(R.id.placeText);
+        final EditText amount = (EditText) findViewById(R.id.amountText);
+        final EditText phoneNumber = (EditText) findViewById(R.id.phoneText);
+        final EditText dateText = (EditText) findViewById(R.id.dateText);
+        final Button addExpense = (Button) findViewById(R.id.add_button);
+
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.typeArray, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -45,7 +51,9 @@ public class AddExpenseActivity extends AppCompatActivity {
                 myCalendar.set(Calendar.YEAR,year);
                 myCalendar.set(Calendar.MONTH,monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-                updateLabel();
+                String myFormat = "MM/dd/YY";
+                SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+                dateText.setText(sdf.format(myCalendar.getTime()));
             }
         };
 
@@ -79,9 +87,4 @@ public class AddExpenseActivity extends AppCompatActivity {
 
     }
 
-    private void updateLabel() {
-        String myFormat = "MM/dd/YY";
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-        dateText.setText(sdf.format(myCalendar.getTime()));
-    }
 }

@@ -16,4 +16,12 @@ public class Expense {
         this.type = type;
         this.date = date;
     }
+
+    public String getPlace() {
+        return location;
+    }
+
+    public double getPrice() {
+        return amount;
+    }
 }

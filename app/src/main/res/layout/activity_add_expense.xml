@@ -10,64 +10,80 @@
         android:id="@+id/placeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="84dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="27dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Place"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="27dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/phoneText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone Number"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="94dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/placeText" />
 
     <EditText
         android:id="@+id/amountText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Amount"
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="162dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneText" />
 
     <Button
         android:id="@+id/add_button"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="19dp"
         android:text="Add Expense"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="350dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateText" />
 
     <Button
         android:id="@+id/cancel_button"
         android:layout_width="209dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="23dp"
         android:text="Cancel "
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="420dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_button" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="207dp"
         android:layout_height="39dp"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="225dp" />
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountText" />
 
     <EditText
         android:id="@+id/dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="21dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Date "
-        tools:layout_editor_absoluteX="85dp"
-        tools:layout_editor_absoluteY="285dp"
         android:focusable="false"
-        android:longClickable="false" />
+        android:inputType="textPersonName"
+        android:longClickable="false"
+        android:text="Date "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
 </android.support.constraint.ConstraintLayout>

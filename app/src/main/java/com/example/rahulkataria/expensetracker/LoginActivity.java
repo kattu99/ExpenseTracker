@@ -1,5 +1,6 @@
 package com.example.rahulkataria.expensetracker;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,15 +24,17 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "EmailPassword";
 
     private FirebaseAuth mAuth;
-    final Button loginButton = findViewById(R.id.login);
-    final Button createAccountButton = findViewById(R.id.createaccount);
-    final EditText emailView = findViewById(R.id.email);
-    final EditText passwordView = findViewById(R.id.password);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        final Button loginButton = findViewById(R.id.login);
+        final Button createAccountButton = findViewById(R.id.createaccount);
+        final EditText emailView = findViewById(R.id.email);
+        final EditText passwordView = findViewById(R.id.password);
+        mAuth = FirebaseAuth.getInstance();
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +53,9 @@ public class LoginActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    Toast.makeText(LoginActivity.this, "Authentication Succeeded.",
+                                            Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(LoginActivity.this, ManageExpenses.class));
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -75,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    startActivity(new Intent(LoginActivity.this, ManageExpenses.class));
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -87,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
+
+
 }
