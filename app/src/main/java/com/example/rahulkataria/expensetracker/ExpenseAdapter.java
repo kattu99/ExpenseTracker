@@ -38,7 +38,7 @@ public class ExpenseAdapter extends ArrayAdapter<Expense>{
         TextView valueView = (TextView) rowView.findViewById(R.id.value);
 
         labelView.setText(itemsArrayList.get(position).getPlace());
-        labelView.setText(String.valueOf(itemsArrayList.get(position).getPrice()));
+        valueView.setText(String.valueOf(itemsArrayList.get(position).getPrice()));
 
         return rowView;
     }
