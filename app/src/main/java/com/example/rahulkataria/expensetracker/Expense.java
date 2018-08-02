@@ -24,4 +24,12 @@ public class Expense {
     public double getPrice() {
         return amount;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getDate() {
+        return date;
+    }
 }

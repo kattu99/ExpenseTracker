@@ -34,11 +34,15 @@ public class ExpenseAdapter extends ArrayAdapter<Expense>{
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.row,parent,false);
 
-        TextView labelView = (TextView) rowView.findViewById(R.id.label);
-        TextView valueView = (TextView) rowView.findViewById(R.id.value);
+        TextView nameView = (TextView) rowView.findViewById(R.id.name);
+        TextView typeView = (TextView) rowView.findViewById(R.id.type);
+        TextView priceView = (TextView) rowView.findViewById(R.id.price);
+        TextView dateView = (TextView) rowView.findViewById(R.id.date);
 
-        labelView.setText(itemsArrayList.get(position).getPlace());
-        valueView.setText(String.valueOf(itemsArrayList.get(position).getPrice()));
+        nameView.setText(itemsArrayList.get(position).getPlace());
+        typeView.setText(String.valueOf(itemsArrayList.get(position).getType()));
+        priceView.setText(String.valueOf(itemsArrayList.get(position).getPrice()));
+        dateView.setText(String.valueOf(itemsArrayList.get(position).getDate()));
 
         return rowView;
     }

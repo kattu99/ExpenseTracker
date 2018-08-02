@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -68,7 +69,7 @@ public class ManageExpenses extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Toast.makeText(ManageExpenses.this, "Database error. Please try again later.", Toast.LENGTH_SHORT).show();
             }
         });
 

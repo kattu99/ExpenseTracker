@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ManageExpenses" />
-        <activity android:name=".AddExpenseActivity"></activity>
+        <activity android:name=".AddExpenseActivity" />
+        <activity android:name=".ScanReceipt"></activity>
     </application>
 
 </manifest>
