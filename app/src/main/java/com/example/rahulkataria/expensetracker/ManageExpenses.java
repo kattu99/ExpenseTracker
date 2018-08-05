@@ -32,6 +32,7 @@ public class ManageExpenses extends AppCompatActivity {
         setContentView(R.layout.activity_manage_expenses);
 
         final Button addExpense = (Button) findViewById(R.id.add_expense);
+        final Button scanReceipt = (Button) findViewById(R.id.scan_receipt);
 
 
         final ArrayList<Expense> expenseList = new ArrayList<>();
@@ -45,6 +46,13 @@ public class ManageExpenses extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ManageExpenses.this, AddExpenseActivity.class));
+            }
+        });
+
+        scanReceipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ManageExpenses.this,ScanReceipt.class));
             }
         });
 
